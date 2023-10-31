@@ -1,0 +1,89 @@
+Maths Algorithm:
+
+*  Counts Digits  
+def countdigits(n):
+    res=0
+    while n != 0:
+        n //= 10
+        res += 1
+    return res
+
+number = int(input("Enter the number"))
+print(countdigits(number))
+
+* Palindrome Numbers
+def Palindrome(n):
+    rev=0
+    temp = n
+    while temp > 0:
+        ld = temp % 10
+        rev = rev*10+ld
+        temp = temp // 10
+    
+    if rev == n:
+        print("It is Palindrome ")
+    else:
+        print("It not a Palindrome")
+    
+number = int(input("Enter the number"))
+print(Palindrome(number))
+
+* Factorial of number
+recursive :
+def fact(n):
+    if n == 0 or n == 1:
+        return 1 
+    return n*fact(n-1)
+
+num = int(input("Enter a number"))
+print(fact(num))
+
+non-recursive :
+def fact(n):
+    res = 1
+    if n < 0:
+        print("Enter a positive number")
+    elif n == 0:
+        print("Factorial of ) is 1")
+    else:
+        for i in range(1,n+1):
+            res *= i
+        return res
+    
+num = int(input("Enter a number"))
+print(fact(num))
+
+* Trailing Zeros in Factorial
+def fact(n):
+    import math
+    c = 0
+    x = math.factorial(n)
+    s = str(x)
+    a = s[::-1]
+    for i in a:
+        if(i != "0"):
+            break
+        else:
+            c += 1
+    return c
+    
+num = int(input("Enter a number"))
+print(fact(num))
+
+Efficient approach:
+def fact(n):
+ 
+    # Initialize result
+    count = 0
+ 
+    # Keep dividing n by
+    # powers of 5 and
+    # update Count
+    i = 5
+    while (n / i >= 1):
+        count += int(n / i)
+        i *= 5
+ 
+    return int(count)
+num = int(input("Enter a number"))
+print(fact(num))
