@@ -87,3 +87,27 @@ def fact(n):
     return int(count)
 num = int(input("Enter a number"))
 print(fact(num))
+
+* GCD of two number
+def gcd(x, y):
+   while(y):
+       x, y = y, x % y
+   return x
+    
+a = int(input("enter a number : "))
+b = int(input("enter a number : "))
+print(gcd(a,b))
+
+* LCM of two number
+# This function computes GCD 
+def compute_gcd(x, y):
+   while(y):
+       x, y = y, x % y
+   return x
+# This function computes LCM
+def lcm(x, y):
+   lcm = (x*y)//compute_gcd(x,y)
+   return lcm
+a = int(input("enter a number : "))
+b = int(input("enter a number : "))
+print(lcm(a,b))
